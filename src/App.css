@@ -1,38 +1,142 @@
-.App {
-  text-align: center;
+.general {
+  padding: 2rem;
+  border-radius: 3rem;
+}
+.col-src {
+  z-index: 99;
+}
+.x-data-src {
+  font-family: "Roboto", sans-serif;
+  background-color: #263BA7;
+  color: #fff;
+  min-height: 100%;
+  margin-right: 0;
+  padding: 2rem 3.4rem 2rem 1rem;
+}
+.x-data-src h2 {
+  font-weight: 500;
+}
+.x-data-src h6 {
+  font-weight: 300;
+}
+.x-data-src input {
+  font-style: italic;
+}
+.x-data-src input:focus {
+  font-style: normal;
+}
+.col-res {
+  z-index: 88;
+}
+.x-data-res {
+  background-color: #ECB14F;
+  color: #000;
+  min-height: 15rem;
+  padding: 2rem 3.4rem 2rem 6rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+.src-group {
+  background-color: #EBEBEB;
+  padding: .4rem;
+  border-radius: 1.5rem;
+}
+.src-group:focus-within {
+  border-color: #86b7fe;
+  box-shadow: 0 0 0 .25rem rgba(236,177,79,.5);
+}
+.src-group .form-control {
+  width: 85%;
+  background-color: transparent;
+  border: 0;
+}
+.src-group button {
+  padding-left: 1.4rem;
+  padding-right: 1.4rem;
+  border-radius: 1.5rem;
+}
+.src-group .form-control:focus {
+  border: 0;
+  box-shadow: none;
+}
+.image-carton-3d {
+  max-width: 19rem;
+  position: absolute;
+  left: 6.8rem;
+  top: 1.7rem;
+  z-index: 77;
+}
+.col-suggest {
+  font-family: "Roboto", sans-serif;
+  margin-top: -3rem;
+  min-height: 12rem;
+  border-end-start-radius: 3rem;
+  border-end-end-radius: 3rem;
+  padding: 3.4rem 2.5rem 1.2rem 2.5rem;
+}
+.col-suggest h6 {
+  font-weight: 500;
+}
+.col-suggest p {
+  font-weight: 300;
+  background-color: #F9DEAF;
+  padding: .14rem .6rem .14rem .6rem;
+  margin: 0 .14rem;
+  line-height: 2.2;
+  border-radius: .5rem;
+  font-size: .95em;
+}
+.col-suggest p:hover {
+  background-color: #f7ca7c;
+}
+.col-suggest a {
+  text-decoration: none;
+  color: #000000;
+}
+footer {
+  font-family: "Roboto", sans-serif;
+}
+.social-footer {
+  background-color: #25282B;
+  color: #FFF;
+  min-height: 10rem;
+  border-radius: 3rem 3rem 0 0;
+}
+.social-footer a {
+  text-decoration: none;
+  color: #FFF;
+}
+.copyright-footer {
+  background-color: #4D4D4E;
+  color: #FFF;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.kbbi-logo {
+  max-width: 35%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media (max-width: 768px) { 
+  .image-carton-3d {
+      display: none;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .x-data-src {
+      padding: 1rem;
   }
-  to {
-    transform: rotate(360deg);
+  .x-data-res {
+      margin-top: -5rem;
+      padding: 2rem;
+      padding-top: 5.6rem;
   }
+
+}
+
+@media (min-width: 576px) {
+  .x-data-src {
+      margin-right: -5rem;
+  }
+  .x-data-res {
+    min-height: 33rem;
+
+  }
+  
 }

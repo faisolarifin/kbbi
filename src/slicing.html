@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        .general {
+            padding: 2rem;
+            border-radius: 3rem;
+        }
+        .col-src {
+            z-index: 99;
+        }
+        .x-data-src {
+            font-family: "Roboto", sans-serif;
+            background-color: #263BA7;
+            color: #fff;
+            min-height: 100%;
+            margin-right: 0;
+            padding: 2rem 3.4rem 2rem 1rem;
+        }
+        .x-data-src h2 {
+            font-weight: 500;
+        }
+        .x-data-src h6 {
+            font-weight: 300;
+        }
+        .x-data-src input {
+            font-style: italic;
+        }
+        .x-data-src input:focus {
+            font-style: normal;
+        }
+        .col-res {
+            z-index: 88;
+        }
+        .x-data-res {
+            background-color: #ECB14F;
+            min-height: 15rem;
+            color: #000;
+            padding: 2rem 3.4rem 2rem 6rem;
+            font-family: "Roboto", sans-serif;
+            font-weight: 400;
+        }
+        .src-group {
+            background-color: #EBEBEB;
+            padding: .4rem;
+            border-radius: 1.5rem;
+        }
+        .src-group:focus-within {
+            border-color: #86b7fe;
+            box-shadow: 0 0 0 .25rem rgba(236,177,79,.5);
+        }
+        .src-group .form-control {
+            width: 85%;
+            background-color: transparent;
+            border: 0;
+        }
+        .src-group button {
+            padding-left: 1.4rem;
+            padding-right: 1.4rem;
+            border-radius: 1.5rem;
+        }
+        .src-group .form-control:focus {
+            border: 0;
+            box-shadow: none;
+        }
+        .image-carton-3d {
+            max-width: 19rem;
+            position: absolute;
+            left: 6.8rem;
+            top: 1.7rem;
+            z-index: 77;
+        }
+        .col-suggest {
+            font-family: "Roboto", sans-serif;
+            margin-top: -3rem;
+            min-height: 12rem;
+            border-end-start-radius: 3rem;
+            border-end-end-radius: 3rem;
+            padding: 3.4rem 2.5rem 1.2rem 2.5rem;
+        }
+        .col-suggest h6 {
+            font-weight: 500;
+        }
+        .col-suggest i {
+            font-weight: 300;
+            background-color: #F9DEAF;
+            color: #000000;
+            padding: .1rem .4rem .1rem .4rem;
+            margin: 0 .1rem;
+            line-height: 2.2;
+            border-radius: .5rem;
+            font-size: .9em;
+        }
+        .col-suggest i:hover {
+            background-color: #f7ca7c;
+        }
+        .col-suggest a {
+            text-decoration: none;
+        }
+        footer {
+            font-family: "Roboto", sans-serif;
+        }
+        .social-footer {
+            background-color: #25282B;
+            color: #FFF;
+            min-height: 10rem;
+            border-radius: 3rem 3rem 0 0;
+        }
+        .social-footer a {
+            text-decoration: none;
+            color: #FFF;
+        }
+        .copyright-footer {
+            background-color: #4D4D4E;
+            color: #FFF;
+        }
+
+        @media (max-width: 768px) { 
+            .image-carton-3d {
+                display: none;
+            }
+            .x-data-src {
+                padding: 1rem;
+            }
+            .x-data-res {
+                margin-top: -5rem;
+                padding: 2rem;
+                padding-top: 5.6rem;
+            }
+
+        }
+
+        @media (min-width: 576px) {
+            .x-data-src {
+                margin-right: -5rem;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col">
+                <div class="row justify-content-center">
+                    <div class="col-sm-6 col-src pe-sm-0">
+                        <div class="general x-data-src">
+                            <div class="row justify-content-center justify-content-sm-end">
+                                <img src="./istockphoto-1474576599-1024x1024.png" alt=".." class="image-carton-3d">
+                                <div class="col-sm-8 col-src">
+                                    <div class="text-center">
+                                        <h2>KAMUS BESAR BAHASA INDONESIA (KBBI)</h3>
+                                        <h6>Kamus versi digital bisa diakses dari berbagai platform secara online</h6>
+                                    </div>
+                                    <div class="my-5">
+                                        <div class="src-group d-flex">
+                                            <input type="text" class="form-control d-inline-block" id="keyword" placeholder="Ketikkan kata yang dicari...">
+                                            <button type="button" class="btn btn-danger d-inline-block"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                                              </svg></button>
+                                        </div>
+                                    </div>                              
+                                    <h6>Versi 1.1 update data terakhir : Januari 2024</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-5 col-res ps-sm-0">
+                        <div class="general x-data-res">
+                            <p>tangkap/tang·kap/ v bertangkap/ber·tang·kap/ v berperang seorang lawan seorang; bergelutmenangkap/me·nang·kap/ v 1  memegang (sesuatu yang bergerak cepat, lepas, dan sebagainya); memegang  (binatang, pencuri, penjahat, dan sebagainya) dengan tangan atau alat: nelayan itu ~ ikan dengan jala; polisi telah berhasil ~ para penjahat; 2 menerkam: harimau liar itu ~ kambing penduduk; 3 menadah (menyambut, menampung) barang yang dilemparkan: penjaga gawang ~ bola dengan menjatuhkan diri; 4 mendapati (orang berbuat jahat, kesalahan, rahasia, dan sebagainya): guru itu ~ beberapa pelajar yang merokok di dalam kelas; 5 menerima (suara, siaran radio, dan sebagainya): pesawat radio ini dapat ~ siaran dari luar negeri; 6 dapat memahami (mengetahui dan sebagainya): aku tidak dapat ~ isi pembicaraan mereka karena mereka menggunakan kata-kata sandi; 7 mencerap; menerima (dengan pancaindra): pemimpin rakyat harus dapat ~ </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-sm-11">
+                <div class="col-suggest shadow-sm">
+                    <div class="row">
+                        <div class="col">
+                            <h6 class="my-2">Rekomendasi kata</h6>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <a href="#"><i>refleksi</i></a>
+                            <a href="#"><i>abstrak</i></a>
+                            <a href="#"><i>abnormal</i></a>
+                            <a href="#"><i>abnormal</i></a>
+                            <a href="#"><i>abnormal</i></a>
+                            <a href="#"><i>abnormal</i></a>
+                            <a href="#"><i>abnormal</i></a>
+                            <a href="#"><i>abnormal</i></a>
+                            <a href="#"><i>abnormal</i></a>
+                            <a href="#"><i>abnormal</i></a>
+                            <a href="#"><i>abnormal</i></a>
+                            <a href="#"><i>abnormal</i></a>
+                            <a href="#"><i>abnormal</i></a>
+                            <a href="#"><i>abnormal</i></a>
+                            <a href="#"><i>abnormal</i></a>
+                            <a href="#"><i>abnormal</i></a>
+                            <a href="#"><i>abnormal</i></a>
+                            <a href="#"><i>abnormal</i></a>
+                            <a href="#"><i>abnormal</i></a>
+                            <a href="#"><i>abnormal</i></a>
+                            <a href="#"><i>abnormal</i></a>
+                            <a href="#"><i>abnormal</i></a>
+                            <a href="#"><i>abnormal</i></a>
+                            <a href="#"><i>abnormal</i></a>
+                            <a href="#"><i>abnormal</i></a>
+                            <a href="#"><i>abnormal</i></a>
+                            <a href="#"><i>abnormal</i></a>
+                            <a href="#"><i>abnormal</i></a>
+                            <a href="#"><i>abnormal</i></a>
+                            <a href="#"><i>abnormal</i></a>
+                            <a href="#"><i>abnormal</i></a>
+                            <a href="#"><i>abnormal</i></a>
+                            <a href="#"><i>abnormal</i></a>
+                            <a href="#"><i>abnormal</i></a>
+                            <a href="#"><i>abnormal</i></a>
+                            <a href="#"><i>abnormal</i></a>
+                            <a href="#"><i>abnormal</i></a>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="container-fluid">
+        <div class="row mt-5">
+            <div class="social-footer py-4">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-sm-5">
+                            <h5>Our Location</h5>
+                            <p>Jl. Raya Lenteng No.45 Lenteng, Sumenep, Jawa Timur.</p>
+                        </div>
+                        <div class="col-sm-5">
+                            <h5>Contact Us</h5>
+                            <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+                              </svg> <a href="#">faisolofficial99@gmail.com</a></p>
+                              <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+                              </svg> <a href="#">@faisollarifin</a></p>
+                              <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
+                                <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
+                              </svg> <a href="#">@faisollarifin</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="copyright-footer py-3">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-sm-10">
+                            <p class="mb-0">Copyright &copy; 2024 digital kbbi by faisolarifin</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
