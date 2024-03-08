@@ -20,7 +20,7 @@ const MyComponent = () => {
         const fetchData = async () => {
             try {
                 const collectionRef = collection(db, 'kamus');
-                const qry = query(collectionRef, limit(30));
+                const qry = query(collectionRef, limit(40));
                 const querySnapshot = await getDocs(qry);
                 const fetchedData = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
                 setRecomended(fetchedData);

@@ -64,7 +64,7 @@
   max-width: 19rem;
   position: absolute;
   left: -2rem;
-  bottom: 0;
+  top: -1.5rem;
   z-index: 77;
 }
 .col-suggest {
