@@ -49,7 +49,7 @@ export default function SearchResult({db, setSearchTermField}) {
                 searchResult && searchResult != null ? (
                     <div dangerouslySetInnerHTML={{ __html: searchResult.deskripsi }} />
                 ) : (
-                    <DescApp />
+                    <div>Memuat...</div>
                 ) 
             }
         </div>
