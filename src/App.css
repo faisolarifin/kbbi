@@ -12,6 +12,7 @@
   min-height: 100%;
   margin-right: 0;
   padding: 2rem 3.4rem 2rem 1rem;
+  position: relative;
 }
 .x-data-src h2 {
   font-weight: 500;
@@ -62,8 +63,8 @@
 .image-carton-3d {
   max-width: 19rem;
   position: absolute;
-  left: 6.8rem;
-  top: 1.7rem;
+  left: -2rem;
+  bottom: 0;
   z-index: 77;
 }
 .col-suggest {
@@ -110,10 +111,14 @@ footer {
   background-color: #4D4D4E;
   color: #FFF;
 }
-
 .kbbi-logo {
   max-width: 35%;
 }
+.btn-clear:hover {
+  background-color: transparent;
+  color: #3a3a3a;
+}
+
 
 @media (max-width: 768px) { 
   .image-carton-3d {
