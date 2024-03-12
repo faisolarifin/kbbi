@@ -24,11 +24,10 @@ export default function SearchResult({db, setSearchTermField}) {
                 const querySnapshot = await getDocs(qry);
     
                 if (!querySnapshot.empty) {
-                    const result = querySnapshot.docs[0].data();
+                    const result = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
                     setSearchResult(result);
                 } else {
                     setSearchResult({
-                        term : "",
                         deskripsi: `<p class="mb-0">Kata yang di cari <strong>${searchTerm}</strong></p><p>Maaf, kata <strong>${searchTerm}</strong> tidak dapat ditemukan.</p>`
                     });
                 }
@@ -47,7 +46,13 @@ export default function SearchResult({db, setSearchTermField}) {
         <div>
             {
                 searchResult && searchResult != null ? (
-                    <div dangerouslySetInnerHTML={{ __html: searchResult.deskripsi }} />
+                    searchResult.length > 0 ? (
+                        searchResult.map((item, index) => (
+                            <div key={index} dangerouslySetInnerHTML={{ __html: item.deskripsi }} />
+                        ))
+                    ) : (
+                        <div dangerouslySetInnerHTML={{ __html: searchResult.deskripsi }} />
+                    )
                 ) : (
                     <div>Memuat...</div>
                 ) 
