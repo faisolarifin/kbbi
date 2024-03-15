@@ -118,6 +118,35 @@ footer {
   background-color: transparent;
   color: #3a3a3a;
 }
+.search-history {
+  list-style: none;
+  padding: .2rem .4rem;
+}
+.search-history li {
+  background-color: #f7ca7c;
+  display: inline-block;
+  position: relative;
+  color: #000;
+  padding: .1rem .4rem;
+  border-radius: .3rem;
+  margin: .4rem;
+}
+.search-history li button {
+  background-color: #c7c7c7;
+  border: 0;
+  border-radius: 50%;
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  line-height: 0;
+  top: -0.4rem;
+  right: -0.4rem;
+  font-size: .6em;
+}
+.search-history li button:hover {
+  background-color: #a6a5a5;
+  transform: scale(1.4);
+}
 
 
 @media (max-width: 768px) { 

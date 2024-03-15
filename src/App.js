@@ -14,6 +14,7 @@ const MyComponent = () => {
     const db = getFirestore(app);
     const [recomended, setRecomended] = useState([]);
     const [searchTermField, setSearchTermField] = useState("");
+    const [searches, setSearches] = useState(null);
 
     useEffect(() => {
 
@@ -25,13 +26,27 @@ const MyComponent = () => {
                 const fetchedData = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
                 setRecomended(fetchedData);
 
+                
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
         };
-
+        
         fetchData();
+
+        // Load search history from local storage when component 
+        const storedSearches = JSON.parse(localStorage.getItem('searchHistory'));
+        if (storedSearches) {
+            setSearches(storedSearches);
+        }
+        
     }, []);
+
+    const removeFromHistory = (index) => {
+        const updatedSearches = [...searches.slice(0, index), ...searches.slice(index + 1)];
+        setSearches(updatedSearches);
+        localStorage.setItem('searchHistory', JSON.stringify(updatedSearches));
+    };
 
   return (
     <div>
@@ -50,7 +65,23 @@ const MyComponent = () => {
                                                 <h6>Kamus versi digital bisa diakses dari berbagai platform secara online</h6>
                                             </div>
                                             <SearchField searchTermField={searchTermField} setSearchTermField={setSearchTermField} />                       
-                                            <h6 className="text-center text-sm-start">Versi 1.0 update data terakhir : Januari 2024</h6>
+                                            <h6 className="text-center text-sm-start">Versi 1.2 update data terakhir : Maret 2024</h6>
+                                            <div>
+                                                <ul className="search-history">
+                                                    {
+                                                        searches && searches != null ? (
+                                                            searches.map((query, index) => (
+                                                                <li key={index}>
+                                                                    {query}
+                                                                    <button onClick={() => removeFromHistory(index)}>x</button>
+                                                                </li>
+                                                                ))
+                                                        ) : (
+                                                            <div></div>
+                                                        )
+                                                    }
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -59,7 +90,7 @@ const MyComponent = () => {
                                 <div className="general x-data-res">
                                     <Routes>
                                         <Route path="/" element={ <DescApp /> } />
-                                        <Route path="/:searchTerm" element={ <SearchResult db={db} setSearchTermField={setSearchTermField} /> } />
+                                        <Route path="/:searchTerm" element={ <SearchResult db={db} setSearchTermField={setSearchTermField} searches={searches} setSearches={setSearches} /> } />
                                     </Routes>
                                 </div>
                             </div>
