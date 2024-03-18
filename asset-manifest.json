@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.bdb84ec3.css",
-    "main.js": "/static/js/main.951598ca.js",
+    "main.js": "/static/js/main.0ebe8661.js",
     "static/js/453.d47162a2.chunk.js": "/static/js/453.d47162a2.chunk.js",
     "static/media/kbbi_logo.png": "/static/media/kbbi_logo.18907681105cf68449af.png",
     "static/media/istockphoto-1474576599-1024x1024.png": "/static/media/istockphoto-1474576599-1024x1024.6c2dea99e3d934714d76.png",
     "index.html": "/index.html",
     "main.bdb84ec3.css.map": "/static/css/main.bdb84ec3.css.map",
-    "main.951598ca.js.map": "/static/js/main.951598ca.js.map",
+    "main.0ebe8661.js.map": "/static/js/main.0ebe8661.js.map",
     "453.d47162a2.chunk.js.map": "/static/js/453.d47162a2.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.bdb84ec3.css",
-    "static/js/main.951598ca.js"
+    "static/js/main.0ebe8661.js"
   ]
 }
