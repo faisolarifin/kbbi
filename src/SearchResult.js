@@ -18,15 +18,16 @@ export default function SearchResult({db, setSearchTermField, searches, setSearc
 
         const searchData = async () => {
             try {
+                const searchText = searchTerm.trim().toLocaleLowerCase();
                 const collectionRef = collection(db, 'kamus');
-                const qry = query(collectionRef, where('term', '==', searchTerm.trim().toLocaleLowerCase()));
+                const qry = query(collectionRef, where('term', '==', searchText));
                 const querySnapshot = await getDocs(qry);
     
                 if (!querySnapshot.empty) {
                     const result = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
                     setSearchResult(result);
 
-                    const updatedSearches = [searchTerm.trim().toLocaleLowerCase(), ...searches.slice(0, 12)]; // Limiting to 5 items
+                    const updatedSearches = searches ? [searchText, ...searches.slice(0, 12)] : [searchText]; // Limiting to 5 items
                     setSearches(updatedSearches);
                     localStorage.setItem('searchHistory', JSON.stringify(updatedSearches));
                 } else {

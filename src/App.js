@@ -38,6 +38,8 @@ const MyComponent = () => {
         const storedSearches = JSON.parse(localStorage.getItem('searchHistory'));
         if (storedSearches) {
             setSearches(storedSearches);
+        } else {
+            localStorage.setItem('searchHistory', JSON.stringify([]));
         }
         
     }, []);
