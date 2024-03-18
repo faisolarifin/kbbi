@@ -67,14 +67,14 @@ const MyComponent = () => {
                                                 <h6>Kamus versi digital bisa diakses dari berbagai platform secara online</h6>
                                             </div>
                                             <SearchField searchTermField={searchTermField} setSearchTermField={setSearchTermField} />                       
-                                            <h6 className="text-center text-sm-start">Versi 1.3 update data terakhir : Maret 2024</h6>
+                                            <h6 className="text-center text-sm-start">Versi 1.4 update data terakhir : Maret 2024</h6>
                                             <div>
                                                 <ul className="search-history">
                                                     {
                                                         searches && searches != null ? (
                                                             searches.map((query, index) => (
                                                                 <li key={index}>
-                                                                    {query}
+                                                                    <Link to={query}>{query}</Link>
                                                                     <button onClick={() => removeFromHistory(index)}>x</button>
                                                                 </li>
                                                                 ))
