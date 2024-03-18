@@ -16,6 +16,10 @@ export default function SearchResult({db, setSearchTermField, searches, setSearc
             return;
         }
 
+        const removeByWord = (arr, word) => {
+            return arr.filter(item => !item.includes(word))
+        }
+
         const searchData = async () => {
             try {
                 const searchText = searchTerm.trim().toLocaleLowerCase();
@@ -26,10 +30,12 @@ export default function SearchResult({db, setSearchTermField, searches, setSearc
                 if (!querySnapshot.empty) {
                     const result = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
                     setSearchResult(result);
-
-                    const updatedSearches = searches ? [searchText, ...searches.slice(0, 12)] : [searchText]; // Limiting to 5 items
-                    setSearches(updatedSearches);
-                    localStorage.setItem('searchHistory', JSON.stringify(updatedSearches));
+                    if (searches) {
+                        searches = removeByWord(searches, searchText)
+                        const updatedSearches = [searchText, ...searches.slice(0, 12)]; // Limiting to 12 items
+                        setSearches(updatedSearches);
+                        localStorage.setItem('searchHistory', JSON.stringify(updatedSearches));
+                    }
                 } else {
                     setSearchResult({
                         deskripsi: `<p class="mb-0">Kata yang di cari <strong>${searchTerm}</strong></p><p>Maaf, kata <strong>${searchTerm}</strong> tidak dapat ditemukan.</p>`
